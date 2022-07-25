@@ -10,14 +10,14 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Embeddable
 @Builder
+@AttributeOverrides({
+        @AttributeOverride(name = "name", column = @Column(name = "guardian_name")),
+        @AttributeOverride(name = "email", column = @Column(name = "guardian_email")),
+        @AttributeOverride(name = "mobile", column = @Column(name = "guardian_mobile"))
+})
 public class Guardian {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "guardianSequence", sequenceName = "guardianSequence", allocationSize = 1)
-    private Long guardianId;
 
     private String name;
 

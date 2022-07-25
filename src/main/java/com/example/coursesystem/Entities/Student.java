@@ -19,10 +19,10 @@ public class Student {
     @SequenceGenerator(name = "studentSequence", sequenceName = "studentSequence", allocationSize = 1)
     private Long studentId;
 
-
     private String firstName;
 
     private String lastName;
 
-    //private String emailId;
+    @Embedded
+    private Guardian guardian;
 }
