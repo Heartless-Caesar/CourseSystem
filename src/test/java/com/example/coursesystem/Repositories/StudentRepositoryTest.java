@@ -77,4 +77,18 @@ class StudentRepositoryTest {
         System.out.println("Students " + students);
     }
 
+
+    @Test
+    public void getStudentFirstNameByIdJPAQuery(){
+        String student = studentRepository.getStudentFirstNameById(1L);
+
+        System.out.println("Students " + student);
+    }
+
+    @Test
+    public void getStudentFirstNameByIdJPAQueryNative(){
+        List<Student> student = studentRepository.getStudentByIdNative(1L);
+
+        System.out.println("Students " + student);
+    }
 }

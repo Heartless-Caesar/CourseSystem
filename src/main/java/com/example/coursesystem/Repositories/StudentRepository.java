@@ -18,6 +18,10 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
 
 
     //JPQL
-    @Query(value = "SELECT s FROM Student s WHERE s.studentId = ?1")
-    public List<Student> getStudentById(String studentId);
+    @Query(value = "SELECT s.firstName FROM Student s WHERE s.studentId = ?1")
+    public String getStudentFirstNameById(Long studentId);
+
+    //Native query
+    @Query(value = "SELECT * FROM student s WHERE s.student_id = ?1", nativeQuery = true)
+    public List<Student> getStudentByIdNative(Long studentId);
 }
