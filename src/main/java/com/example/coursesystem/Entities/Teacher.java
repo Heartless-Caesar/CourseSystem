@@ -15,8 +15,8 @@ import javax.persistence.*;
 public class Teacher {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "teacherSequence", sequenceName = "teacherSequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teacherSequence")
     private Long guardianId;
 
     private String firstName;

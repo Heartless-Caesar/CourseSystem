@@ -15,8 +15,8 @@ import javax.persistence.*;
 public class Course {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "courseSequence", sequenceName = "courseSequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "courseSequence")
     private Long courseId;
 
     private String courseName;
