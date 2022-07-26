@@ -91,4 +91,11 @@ class StudentRepositoryTest {
 
         System.out.println("Students " + student);
     }
+
+    @Test
+    public void getStudentByFirstNameParam(){
+        List<Student> student = studentRepository.getStudentByFirstNameParam("Julius");
+
+        System.out.println("Students " + student);
+    }
 }
